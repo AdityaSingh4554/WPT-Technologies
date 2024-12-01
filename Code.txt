@@ -1,0 +1,176 @@
+<script>
+    // (function () {
+    //     document.write("HEllo");
+    // }())
+    // document.write(typeof(function(){}));
+
+    // let r=(function(){return ("hello")
+
+    // }());
+    // document.write(r);
+
+    // (function () {
+    //     alert("This is a String");
+    // })()
+
+    // var r = (function (a) {
+    //     return a * a;
+    // }(5))
+    // document.write(r);
+
+    // var square=(n)=>n*n;
+    // document.write(square(5));
+
+    // var sqr=function(n)
+    // {
+    //     return n*n;
+    // }
+    // document.write(sqr(2));
+
+    // let fact = (n) => {
+    //     let f = 1;
+    //     for (let i = 2; i <= n; i++)
+    //         f = f * i;
+    //     return f;
+    // };
+
+    // let r = fact(5);
+    // document.write(r);
+
+    // var obj = new Object();
+    // obj.name = "vita";
+    // obj.marks = 90;
+    // document.write(obj); //object Object
+    // document.write(obj.constructor); //function Object
+
+
+    "use strict"
+    // function person(Id, nm, Bal) {
+    //     alert(this.constructor)
+    //     this.id = Id;
+    //     this.name = nm;
+    //     this.balance = Bal;
+    // }
+    // var ob = new person(1, "mona", 80000);
+    // document.write(ob);
+    // document.write(ob.id+" ");
+    // document.write(ob.name+" ");
+    // document.write(ob.balance+" ");
+    // document.write(ob instanceof person);
+    // document.write(ob instanceof Account);
+    // document.write(ob.constructor);
+    // document.write(person.length);
+    // for(let prop in ob)
+    // document.write(prop+" "+" : "+ob[prop]+"<br/>");
+    // person(103, "Adi", 90000);
+    // console.log(window.name);
+    // console.log(window);
+
+    // const target = {};
+    // const source = { b: 4, c: 5 };
+
+    // const returnedTarget = Object.assign(target, source);
+    // console.log(target);// Expected output: Object { a: 1, b: 4, c: 5 }
+
+    // console.log(returnedTarget === target);// Expected output: true
+
+
+    // const user = {
+    //     'name': 'Alex',
+    //     'address': '15th Park Avenue',
+    //     'age': 43
+    // }
+    // const updatedUser = { ...user, age: 56 }; // {name: "Alex", address: "15th Park Avenue", age: 56}
+    // console.log(user); // {name: "Alex", address: "15th Park Avenue", age: 43}
+    // console.log(updatedUser);
+
+
+    // var obj = {
+    //         fname: "Raj",
+    //         lname: "Mathur",
+    //         age: 25,
+    //         add: { d: "juhu" },
+    //         fullname: function () {
+    //             return this.fname + " " + this.lname;
+    //         },
+    //         toString: function () {
+    //             return this.fullname() + "  " + this.age + " " + this.add.d;
+    //         }
+    //     };
+
+    //     var f = obj.fullname();
+    //     document.write(f); // Outputs "Raj Mathur"
+    //     document.write(obj); // Calls obj.toString()
+    //     document.write(obj.toString());
+
+
+    "use strict"
+    function person(nm, ag) {
+        if (this instanceof person) {
+            this.name = nm;
+            this.age = ag;
+            this.speak = function () { return "hello" }
+            alert(this.constructor)
+            return this;
+        }
+        else
+            throw new TypeError("Check this is not a function");
+    }
+
+    person.prototype.display = function () { return "parent classmethod data"; }
+    person.prototype.toString = function () {
+        return this.name + " " + this.age
+    }
+
+    var obj1 = new person("raj", 80);
+    console.log(obj1);
+    document.write(obj1);
+    var x = new person("mona", 90);
+    console.log(x);
+    document.write(x);
+
+    //child class
+    function child() {
+    }
+    child.prototype = Object.create(person.prototype);
+
+    var c = new child(); //child got access to parent method
+    console.log(c.display());
+    document.write(c);
+    document.write(c.display());
+
+
+
+    // let iseven=(n)=>n%2==0;
+    // let e=iseven(4);
+    // if(e){
+    // document.write("even");
+    // }
+    // else{
+    // document.write("number is odd");
+    // }
+
+    // let name=()=>"VidyaNidhi";
+    // document.write(name());
+
+    // let na=function(){return "vidyanidhi"}
+    // na();
+    // var testStr = go(); // testStr contians "This is a string"
+    // document.write(testStr);
+
+    // var testCopy = go; // testCopy is a pointer to the function()
+    // var testing = testCopy(); // testing contains "This is a string"
+    // document.write(testing);
+
+    // var r = (function (num) {
+
+    // return
+    // if (num % 2 == 0) {
+    // document.write("even");
+    // }
+    // else {
+    // document.write("number is odd");
+    // }
+    // })
+    // document.write(r);
+</script>
